@@ -13,7 +13,7 @@ Comment.init(
                         autoIncrement: true,
                 },
                 thought: { 
-                        type: DataTypes.STRING,
+                        type: DataTypes.TEXT,
                         allowNull: false,
                 },
                 user_id: {
@@ -22,12 +22,13 @@ Comment.init(
                                 model: 'user',
                                 key: 'id',
                         },
+                    },
                 comment_id: {
                         type: DataTypes.INTEGER,
                         references: {
                                 model: 'post',
                                 key: 'id',
-                            },
+                        },
                 },
         },
         {
