@@ -1,14 +1,18 @@
 [
 	{
-		"title": "A close-friend feature is in testing in Facebook"
+		"title": "A close-friend feature is in testing in Facebook",
+		"content" : "Many Facebook users want to add this personal feature"
 	},
 	{
-		"title": "2022: TechCrunch Sessions -- Climate"
+		"title": "2022: TechCrunch Sessions -- Climate",
+		"content" : "The latest information about one of our most pressing challenges"
 	},
 	{
-		"title": "Russia's invasion may spell bad news for web developers"
+		"title": "Russia's invasion may spell bad news for web developers",
+		"content" : "The threat of dividing up the Internet"
 	},
 	{
-		"title": "Victims of an ongoing attack using stolen third-party OAuth user tokens"
+		"title": "Victims of an ongoing attack using stolen third-party OAuth user tokens",
+		"content" : "This is a security issue that nearly all developers need to be aware of"
 	}
 ]
