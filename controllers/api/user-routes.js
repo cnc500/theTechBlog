@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { json } = require('express/lib/response');
+const bcrypt = require('bcrypt');
 const { User } = require('../../models');
 
 router.post('/sign-up', async (req, res) => {
@@ -18,10 +19,9 @@ router.post('/sign-up', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
-    // we search the DB for a user with the provided email
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    // we search the DB for a user 
+    const userData = await User.findOne({ where: { username: req.body.username } });
     if (!userData) {
-      // the error message shouldn't specify if the login failed because of wrong email or password
       res.status(404).json({ message: 'Login failed. Please try again!' });
       return;
     }

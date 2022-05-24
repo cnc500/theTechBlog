@@ -1,0 +1,28 @@
+const { User, Post } = require('../models');
+
+// Check that the user is the creator of the post
+const checkPoster = async (req, res, next) => {
+    try {
+        const posterinfo = await Post.findOne({
+            where: {
+              id: req.params.id
+            },
+            include: [
+              { model: User }
+            ],
+        });
+        const post = posterInfo.get({ plain: true });
+
+// If user is not creator of post, user is redirected. 
+        if (req.session.loggedInId !== post.user.id) {
+            res.redirect('/');
+            return;
+        }
+        next();
+    } catch (error) {
+        console.log(Error);
+        res.status(500).json(error);
+    }
+};
+
+module.exports = checkPoster;

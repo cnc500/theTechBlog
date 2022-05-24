@@ -1,4 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
+
 // Still require use of connection.js file
 const sequelize = require('../config/connection');
 
@@ -28,6 +30,13 @@ User.init(
                 },
         },
         {
+                hooks: {
+                    beforeCreate: async (newUserData) => {
+                    newUserData.password = await bcrypt.hash(newUserData.password, 10);
+                    return newUserData;
+                    },
+                },
+          
                 sequelize,
                 timestamps: false,
                 freezeTableName: true,
