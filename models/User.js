@@ -4,7 +4,11 @@ const bcrypt = require('bcrypt');
 // Still require use of connection.js file
 const sequelize = require('../config/connection');
 
-class User extends Model {}
+class User extends Model {
+    checkPassword(userpassword) {
+        return bcrypt.compareSync(userpassword,this.password);
+    }
+}
 
 User.init(
 	    {
@@ -35,6 +39,10 @@ User.init(
                     newUserData.password = await bcrypt.hash(newUserData.password, 10);
                     return newUserData;
                     },
+                    beforeUpdate: async (updateData) => {
+                        updateData.password = await bcrypt.hash(updateData.password, 10);
+                        return updateData;
+                    }
                 },
           
                 sequelize,

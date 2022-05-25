@@ -1,17 +1,21 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Post, Comment } = require("../models");
 
-router.get("/", async (req, res) => {
-  try {
-    const userData = await User.findAll();
-    const serializedUser = userData.map((user) => user.get({ plain: true }));
-    console.log(serializedUser);
-    res.render("homepage", {
-      serializedUser,
-    });
-  } catch (err) {
-    res.status(404).json("Error");
-  }
+router.get("/", (req, res) => {
+  Post.findAll({
+    attributes:['id', 'title'],
+    include:[{
+      model: Comment,
+      attributes:['id', 'thought']
+    },
+    {model: User, attributes:['username']}
+  ]
+  })
+  .then(data => {
+    const posts = data.map(post =>post.get({plain: true}))
+    res.render('homepage',{posts});
+
+  })
 });
 
 router.get("/login", (req, res) => {
