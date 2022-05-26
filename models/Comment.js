@@ -12,7 +12,7 @@ Comment.init(
                         allowNull: false,
                         autoIncrement: true,
                 },
-                thought: { 
+                comment: { 
                         type: DataTypes.TEXT,
                         allowNull: false,
                 },
