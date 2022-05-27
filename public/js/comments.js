@@ -9,7 +9,7 @@ const commentFormHandler = async function(event) {
         method: 'POST',
         body: JSON.stringify({
           post_id: postId,
-          comment: comment
+          thought: comment
         }),
         headers: {
           'Content-Type': 'application/json'

@@ -1,18 +1,18 @@
 const postFormHandler = async (event) => {
     event.preventDefault();
   
-    const post = document.querySelector('#form-control').value.trim();
+    const post = document.querySelector('.form-control').value.trim();
     const post_id = localStorage.getItem('postId') || null;
   
     if (post) {
       const response = await fetch('../controllers/homeRoutes', {
         method: 'POST',
-        body: JSON.stringify({ comment, post_id }),
+        body: JSON.stringify({ post, post_id }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        document.location.replace('/posts');
+        document.location.replace('/post');
       } else {
         alert(response.statusText);
       }
@@ -20,5 +20,5 @@ const postFormHandler = async (event) => {
   };
   
   document
-    .querySelector('.post-form')
+    .querySelector('.form-control')
     .addEventListener('submit', postFormHandler);
