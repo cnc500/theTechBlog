@@ -7,8 +7,10 @@
 [contribution](#contribution)
 [questions](#questions) 
 
+## Special Note
+This application is under development.
 ## Description 
-This is a place where web developers can read and write about technical topins, new technical technologies, and other technical advances.  Here, users can publish posts as well as comment on other web developers' posts.
+This is a place where web developers can read and write about technical topins, new technical technologies, and other technical advances.  Here, users can publish posts as well as comment on other web developers' posts. 
 ## Badges
 ![badge](https://img.shields.io/badge/license-MIT-green)
 ## Installation
@@ -23,7 +25,7 @@ Todd Trulock helped me identify resources to use in this application.  Abdullah 
 ###   GitHub Username:  cnc500
 ###   GitHub Repository:  theTechBlog
 ###   Email:  cncarnevale@gmail.com
-## Deployed on Heroku (URL)
-
+## Deployed (URL)
+https://cnc500.github.io/theTechBlog/
 ## Screenshot
 ![screenshot](screenshot14.png)
