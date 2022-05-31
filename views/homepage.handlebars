@@ -1,16 +1,16 @@
-{{#each serializedUser as |user|}}
+{{#each posts as |user|}}
 	<div class='card'>
 		<img src='...' class='card-img-top' alt='...' />
 
 		<div class='card-body'>
-			<h5 class='card-title'>{{user.username}}</h5>
-			<p class='card-text'>{{user.password}}</p>
+			<h5 class='card-title'>{{post.title}}</h5>
+			<p class='card-text'>{{post.content}}</p>
 			<a href='#' class='btn btn-primary'>This is your ID! {{user.id}}</a>
 		</div>
 	</div>
 
 	<div class='card' aria-hidden='true'>
-		<img src='...' class='card-img-top' alt='...' />
+		{{!-- <img src='...' class='card-img-top' alt='...' /> --}}
 		<div class='card-body'>
 			<h5 class='card-title placeholder-glow'>
 				<span class='placeholder col-6'></span>
