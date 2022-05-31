@@ -26,6 +26,6 @@ Todd Trulock helped me identify resources to use in this application.  Abdullah 
 ###   GitHub Repository:  theTechBlog
 ###   Email:  cncarnevale@gmail.com
 ## Deployed (URL)
-https://cnc500.github.io/theTechBlog/
+https://gentle-reef-32699.herokuapp.com/
 ## Screenshot
 ![screenshot](screenshot14.png)
